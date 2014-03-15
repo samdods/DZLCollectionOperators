@@ -14,13 +14,15 @@
 		EABA013C18D47C39005A557E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA013B18D47C39005A557E /* main.m */; };
 		EABA014018D47C39005A557E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA013F18D47C39005A557E /* AppDelegate.m */; };
 		EABA014318D47C39005A557E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EABA014118D47C39005A557E /* Main.storyboard */; };
-		EABA014618D47C39005A557E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA014518D47C39005A557E /* ViewController.m */; };
 		EABA014818D47C39005A557E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EABA014718D47C39005A557E /* Images.xcassets */; };
 		EABA014F18D47C39005A557E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA014E18D47C39005A557E /* XCTest.framework */; };
 		EABA015018D47C39005A557E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA012F18D47C39005A557E /* Foundation.framework */; };
 		EABA015118D47C39005A557E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA013318D47C39005A557E /* UIKit.framework */; };
 		EABA015918D47C39005A557E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EABA015718D47C39005A557E /* InfoPlist.strings */; };
 		EABA015B18D47C39005A557E /* DZLCollectionOperatorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA015A18D47C39005A557E /* DZLCollectionOperatorsTests.m */; };
+		EABA016718D47C70005A557E /* DZLCollectionKeyPathEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */; };
+		EABA016D18D47C7C005A557E /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016A18D47C7C005A557E /* Currency.m */; };
+		EABA016E18D47C7C005A557E /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016C18D47C7C005A557E /* Transaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,19 @@
 		EABA013E18D47C39005A557E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EABA013F18D47C39005A557E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EABA014218D47C39005A557E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EABA014418D47C39005A557E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EABA014518D47C39005A557E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EABA014718D47C39005A557E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EABA014D18D47C39005A557E /* DZLCollectionOperatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DZLCollectionOperatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA014E18D47C39005A557E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EABA015618D47C39005A557E /* DZLCollectionOperatorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DZLCollectionOperatorsTests-Info.plist"; sourceTree = "<group>"; };
 		EABA015818D47C39005A557E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EABA015A18D47C39005A557E /* DZLCollectionOperatorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DZLCollectionOperatorsTests.m; sourceTree = "<group>"; };
+		EABA016418D47C70005A557E /* DZLCollectionKeyPathEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DZLCollectionKeyPathEvaluator.h; path = DZLCollectionOperators/DZLCollectionKeyPathEvaluator.h; sourceTree = "<group>"; };
+		EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DZLCollectionKeyPathEvaluator.m; path = DZLCollectionOperators/DZLCollectionKeyPathEvaluator.m; sourceTree = "<group>"; };
+		EABA016618D47C70005A557E /* DZLCollectionOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DZLCollectionOperators.h; path = DZLCollectionOperators/DZLCollectionOperators.h; sourceTree = "<group>"; };
+		EABA016918D47C7C005A557E /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		EABA016A18D47C7C005A557E /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
+		EABA016B18D47C7C005A557E /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		EABA016C18D47C7C005A557E /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +89,9 @@
 		EABA012318D47C39005A557E = {
 			isa = PBXGroup;
 			children = (
+				EABA016418D47C70005A557E /* DZLCollectionKeyPathEvaluator.h */,
+				EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */,
+				EABA016618D47C70005A557E /* DZLCollectionOperators.h */,
 				EABA013518D47C39005A557E /* DZLCollectionOperators */,
 				EABA015418D47C39005A557E /* DZLCollectionOperatorsTests */,
 				EABA012E18D47C39005A557E /* Frameworks */,
@@ -112,11 +122,10 @@
 		EABA013518D47C39005A557E /* DZLCollectionOperators */ = {
 			isa = PBXGroup;
 			children = (
+				EABA016818D47C7C005A557E /* Model */,
 				EABA013E18D47C39005A557E /* AppDelegate.h */,
 				EABA013F18D47C39005A557E /* AppDelegate.m */,
 				EABA014118D47C39005A557E /* Main.storyboard */,
-				EABA014418D47C39005A557E /* ViewController.h */,
-				EABA014518D47C39005A557E /* ViewController.m */,
 				EABA014718D47C39005A557E /* Images.xcassets */,
 				EABA013618D47C39005A557E /* Supporting Files */,
 			);
@@ -150,6 +159,17 @@
 				EABA015718D47C39005A557E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EABA016818D47C7C005A557E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EABA016918D47C7C005A557E /* Currency.h */,
+				EABA016A18D47C7C005A557E /* Currency.m */,
+				EABA016B18D47C7C005A557E /* Transaction.h */,
+				EABA016C18D47C7C005A557E /* Transaction.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EABA014618D47C39005A557E /* ViewController.m in Sources */,
+				EABA016E18D47C7C005A557E /* Transaction.m in Sources */,
+				EABA016718D47C70005A557E /* DZLCollectionKeyPathEvaluator.m in Sources */,
 				EABA014018D47C39005A557E /* AppDelegate.m in Sources */,
 				EABA013C18D47C39005A557E /* main.m in Sources */,
+				EABA016D18D47C7C005A557E /* Currency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +478,7 @@
 				EABA016018D47C39005A557E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EABA016118D47C39005A557E /* Build configuration list for PBXNativeTarget "DZLCollectionOperatorsTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +487,7 @@
 				EABA016318D47C39005A557E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

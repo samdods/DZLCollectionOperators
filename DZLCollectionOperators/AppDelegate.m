@@ -1,4 +1,4 @@
-//
+#import "Currency.h"//
 //  AppDelegate.m
 //  DZLCollectionOperators
 //
@@ -7,40 +7,83 @@
 //
 
 #import "AppDelegate.h"
+#import "DZLCollectionOperators.h"
+#import "Transaction.h"
+
+@interface AppDelegate ()
+@property (nonatomic, strong) NSArray *transactions;
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
-}
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-  // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-  // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+  Currency *gbp = [Currency currencyWithCode:@"GBP"];
+  Currency *eur = [Currency currencyWithCode:@"EUR"];
+  Currency *usd = [Currency currencyWithCode:@"USD"];
+
+  NSDate *lastWeek = [NSDate dateWithTimeIntervalSinceNow:-604800];
+  NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-86400];
+  NSDate *today = [NSDate date];
+  [today compare:lastWeek];
+
+  Transaction *transaction1 = [Transaction transactionWithCurrency:gbp amount:@20.00 date:yesterday];
+  Transaction *transaction2 = [Transaction transactionWithCurrency:gbp amount:@40.00 date:lastWeek];
+  Transaction *transaction3 = [Transaction transactionWithCurrency:eur amount:@12.50 date:today];
+  Transaction *transaction4 = [Transaction transactionWithCurrency:eur amount:@9.99 date:today];
+  Transaction *transaction5 = [Transaction transactionWithCurrency:eur amount:@85.00 date:yesterday];
+  Transaction *transaction6 = [Transaction transactionWithCurrency:usd amount:@15.00 date:lastWeek];
+
+  self.transactions = @[transaction1, transaction2, transaction3, transaction4, transaction5, transaction6];
+
+  [self demoSimpleCollectionOperators];
+
+  [self demoObjectOperators];
+
+  [self demoArrayAndSetOperators];
+
+  return YES;
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+- (void)demoSimpleCollectionOperators
 {
-  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-  // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+  NSLog(@"@avg -> %@", DZLAverage(self.transactions, Transaction *, amount));
+  NSLog(@"@count -> %@", DZLCount(self.transactions, Transaction *, amount));
+  NSLog(@"@max -> %@", DZLMaximum(self.transactions, Transaction *, date));
+  NSLog(@"@min -> %@", DZLMinimum(self.transactions, Transaction *, date));
+  NSLog(@"@sum -> %@", DZLSum(self.transactions, Transaction *, amount));
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (void)demoObjectOperators
 {
-  // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+  NSLog(@"@distinctUnionOfObjects (amount) -> %@", DZLDistinctUnionOfObjects(self.transactions, Transaction *, amount));
+  NSLog(@"@distinctUnionOfObjects (date) -> %@", DZLDistinctUnionOfObjects(self.transactions, Transaction *, date));
+  NSLog(@"@unionOfObjects -> %@", DZLUnionOfObjects(self.transactions, Transaction *, amount));
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+- (void)demoArrayAndSetOperators
 {
-  // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
+  Currency *aud = [Currency currencyWithCode:@"AUD"];
+  NSDate *today = [NSDate date];
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-  // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  Transaction *transaction7 = [Transaction transactionWithCurrency:aud amount:@75.00 date:today];
+  Transaction *transaction8 = [Transaction transactionWithCurrency:aud amount:@195.00 date:today];
+  Transaction *transaction9 = [Transaction transactionWithCurrency:aud amount:@100.00 date:today];
+
+  NSArray *moreTransactions = @[transaction7, transaction8, transaction9];
+
+  NSArray *transactionBatches = @[self.transactions, moreTransactions];
+
+  NSLog(@"@distinctUnionOfArrays -> %@", DZLDistinctUnionOfArrays(transactionBatches, Transaction *, currency.code));
+  NSLog(@"@unionOfArrays -> %@", DZLUnionOfArrays(transactionBatches, Transaction *, currency.code));
+
+  NSSet *transactionsSet = [NSSet setWithArray:self.transactions];
+  NSSet *moreTransactionsSet = [NSSet setWithArray:moreTransactions];
+
+  NSSet *transactionBatchesSet = [NSSet setWithObjects:transactionsSet, moreTransactionsSet, nil];
+
+  NSLog(@"@distinctUnionOfSets -> %@", DZLDistinctUnionOfSets(transactionBatchesSet, Transaction *, currency.code));
 }
 
 @end
