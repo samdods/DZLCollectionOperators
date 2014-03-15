@@ -20,7 +20,6 @@
 		EABA015118D47C39005A557E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABA013318D47C39005A557E /* UIKit.framework */; };
 		EABA015918D47C39005A557E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EABA015718D47C39005A557E /* InfoPlist.strings */; };
 		EABA015B18D47C39005A557E /* DZLCollectionOperatorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA015A18D47C39005A557E /* DZLCollectionOperatorsTests.m */; };
-		EABA016718D47C70005A557E /* DZLCollectionKeyPathEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */; };
 		EABA016D18D47C7C005A557E /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016A18D47C7C005A557E /* Currency.m */; };
 		EABA016E18D47C7C005A557E /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = EABA016C18D47C7C005A557E /* Transaction.m */; };
 /* End PBXBuildFile section */
@@ -53,8 +52,6 @@
 		EABA015618D47C39005A557E /* DZLCollectionOperatorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DZLCollectionOperatorsTests-Info.plist"; sourceTree = "<group>"; };
 		EABA015818D47C39005A557E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EABA015A18D47C39005A557E /* DZLCollectionOperatorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DZLCollectionOperatorsTests.m; sourceTree = "<group>"; };
-		EABA016418D47C70005A557E /* DZLCollectionKeyPathEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DZLCollectionKeyPathEvaluator.h; path = DZLCollectionOperators/DZLCollectionKeyPathEvaluator.h; sourceTree = "<group>"; };
-		EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DZLCollectionKeyPathEvaluator.m; path = DZLCollectionOperators/DZLCollectionKeyPathEvaluator.m; sourceTree = "<group>"; };
 		EABA016618D47C70005A557E /* DZLCollectionOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DZLCollectionOperators.h; path = DZLCollectionOperators/DZLCollectionOperators.h; sourceTree = "<group>"; };
 		EABA016918D47C7C005A557E /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		EABA016A18D47C7C005A557E /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 		EABA012318D47C39005A557E = {
 			isa = PBXGroup;
 			children = (
-				EABA016418D47C70005A557E /* DZLCollectionKeyPathEvaluator.h */,
-				EABA016518D47C70005A557E /* DZLCollectionKeyPathEvaluator.m */,
 				EABA016618D47C70005A557E /* DZLCollectionOperators.h */,
 				EABA013518D47C39005A557E /* DZLCollectionOperators */,
 				EABA015418D47C39005A557E /* DZLCollectionOperatorsTests */,
@@ -270,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EABA016E18D47C7C005A557E /* Transaction.m in Sources */,
-				EABA016718D47C70005A557E /* DZLCollectionKeyPathEvaluator.m in Sources */,
 				EABA014018D47C39005A557E /* AppDelegate.m in Sources */,
 				EABA013C18D47C39005A557E /* main.m in Sources */,
 				EABA016D18D47C7C005A557E /* Currency.m in Sources */,

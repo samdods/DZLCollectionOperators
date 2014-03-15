@@ -14,11 +14,11 @@
 
 @interface Transaction : NSObject
 
-+ (instancetype)transactionWithCurrency:(Currency *)currency amount:(NSNumber *)amount date:(NSDate *)date;
++ (instancetype)transactionWithCurrency:(Currency *)currency amount:(CGFloat)amount date:(NSDate *)date;
 
 @property (nonatomic, strong, readonly) Currency *currency;
 
-@property (nonatomic, strong, readonly) NSNumber *amount;
+@property (nonatomic, assign, readonly) CGFloat amount;
 
 @property (nonatomic, strong, readonly) NSDate *date;
 

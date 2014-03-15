@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong, readonly) NSString *code;
 
+- (double)exchangeRateFromBaseCurrency;
+
 @end

@@ -28,12 +28,12 @@
   NSDate *today = [NSDate date];
   [today compare:lastWeek];
 
-  Transaction *transaction1 = [Transaction transactionWithCurrency:gbp amount:@20.00 date:yesterday];
-  Transaction *transaction2 = [Transaction transactionWithCurrency:gbp amount:@40.00 date:lastWeek];
-  Transaction *transaction3 = [Transaction transactionWithCurrency:eur amount:@12.50 date:today];
-  Transaction *transaction4 = [Transaction transactionWithCurrency:eur amount:@9.99 date:today];
-  Transaction *transaction5 = [Transaction transactionWithCurrency:eur amount:@85.00 date:yesterday];
-  Transaction *transaction6 = [Transaction transactionWithCurrency:usd amount:@15.00 date:lastWeek];
+  Transaction *transaction1 = [Transaction transactionWithCurrency:gbp amount:20.00 date:yesterday];
+  Transaction *transaction2 = [Transaction transactionWithCurrency:gbp amount:40.00 date:lastWeek];
+  Transaction *transaction3 = [Transaction transactionWithCurrency:eur amount:12.50 date:today];
+  Transaction *transaction4 = [Transaction transactionWithCurrency:eur amount:9.99 date:today];
+  Transaction *transaction5 = [Transaction transactionWithCurrency:eur amount:85.00 date:yesterday];
+  Transaction *transaction6 = [Transaction transactionWithCurrency:usd amount:15.00 date:lastWeek];
 
   self.transactions = @[transaction1, transaction2, transaction3, transaction4, transaction5, transaction6];
 
@@ -48,11 +48,11 @@
 
 - (void)demoSimpleCollectionOperators
 {
-  NSLog(@"@avg -> %@", DZLAverage(self.transactions, Transaction *, amount));
+  NSLog(@"@avg -> %@", DZLAverageDouble(self.transactions, Transaction *, amount));
   NSLog(@"@count -> %@", DZLCount(self.transactions, Transaction *, amount));
   NSLog(@"@max -> %@", DZLMaximum(self.transactions, Transaction *, date));
   NSLog(@"@min -> %@", DZLMinimum(self.transactions, Transaction *, date));
-  NSLog(@"@sum -> %@", DZLSum(self.transactions, Transaction *, amount));
+  NSLog(@"@sum -> %@", DZLSumDouble(self.transactions, Transaction *, amount));
 }
 
 - (void)demoObjectOperators
@@ -67,9 +67,9 @@
   Currency *aud = [Currency currencyWithCode:@"AUD"];
   NSDate *today = [NSDate date];
 
-  Transaction *transaction7 = [Transaction transactionWithCurrency:aud amount:@75.00 date:today];
-  Transaction *transaction8 = [Transaction transactionWithCurrency:aud amount:@195.00 date:today];
-  Transaction *transaction9 = [Transaction transactionWithCurrency:aud amount:@100.00 date:today];
+  Transaction *transaction7 = [Transaction transactionWithCurrency:aud amount:75.00 date:today];
+  Transaction *transaction8 = [Transaction transactionWithCurrency:aud amount:195.00 date:today];
+  Transaction *transaction9 = [Transaction transactionWithCurrency:aud amount:100.00 date:today];
 
   NSArray *moreTransactions = @[transaction7, transaction8, transaction9];
 

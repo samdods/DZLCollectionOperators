@@ -28,4 +28,9 @@
   return self;
 }
 
+- (double)exchangeRateFromBaseCurrency
+{
+  return 0.5;
+}
+
 @end

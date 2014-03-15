@@ -13,12 +13,12 @@
 
 @implementation Transaction
 
-+ (instancetype)transactionWithCurrency:(Currency *)currency amount:(NSNumber *)amount date:(NSDate *)date
++ (instancetype)transactionWithCurrency:(Currency *)currency amount:(CGFloat)amount date:(NSDate *)date
 {
   return [[self alloc] initWithCurrency:currency amount:amount date:date];
 }
 
-- (instancetype)initWithCurrency:(Currency *)currency amount:(NSNumber *)amount date:(NSDate *)date
+- (instancetype)initWithCurrency:(Currency *)currency amount:(CGFloat)amount date:(NSDate *)date
 {
   if (!(self = [super init])) {
     return nil;
