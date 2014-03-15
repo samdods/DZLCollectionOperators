@@ -1,4 +1,4 @@
-#import "Currency.h"//
+//
 //  AppDelegate.m
 //  DZLCollectionOperators
 //
@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DZLCollectionOperators.h"
+#import "Currency.h"
 #import "Transaction.h"
 
 @interface AppDelegate ()
@@ -19,9 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-  Currency *gbp = [Currency currencyWithCode:@"GBP"];
-  Currency *eur = [Currency currencyWithCode:@"EUR"];
-  Currency *usd = [Currency currencyWithCode:@"USD"];
+  Currency *gbp = [Currency currencyWithCode:@"GBP" exchangeRate:@1];
+  Currency *eur = [Currency currencyWithCode:@"EUR" exchangeRate:@1.4];
+  Currency *usd = [Currency currencyWithCode:@"USD" exchangeRate:@1.9];
 
   NSDate *lastWeek = [NSDate dateWithTimeIntervalSinceNow:-604800];
   NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-86400];
@@ -53,6 +54,9 @@
   NSLog(@"@max -> %@", DZLMaximum(self.transactions, Transaction *, date));
   NSLog(@"@min -> %@", DZLMinimum(self.transactions, Transaction *, date));
   NSLog(@"@sum -> %@", DZLSumDouble(self.transactions, Transaction *, amount));
+  
+  NSLog(@"@avg (exchange rates) -> %@", DZLAverageNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
+  NSLog(@"@sum (exchange rates) -> %@", DZLSumNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
 }
 
 - (void)demoObjectOperators
@@ -64,7 +68,7 @@
 
 - (void)demoArrayAndSetOperators
 {
-  Currency *aud = [Currency currencyWithCode:@"AUD"];
+  Currency *aud = [Currency currencyWithCode:@"AUD" exchangeRate:@3];
   NSDate *today = [NSDate date];
 
   Transaction *transaction7 = [Transaction transactionWithCurrency:aud amount:75.00 date:today];

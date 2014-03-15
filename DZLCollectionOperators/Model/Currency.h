@@ -12,10 +12,12 @@
 
 @interface Currency : NSObject
 
-+ (instancetype)currencyWithCode:(NSString *)code;
++ (instancetype)currencyWithCode:(NSString *)code exchangeRate:(NSNumber *)exchangeRate;
 
 @property (nonatomic, strong, readonly) NSString *code;
 
-- (double)exchangeRateFromBaseCurrency;
+@property (nonatomic, assign, readonly) NSNumber *exchangeRateFromBaseCurrency;
+
+@property (nonatomic, strong, readonly) NSUUID *identifier;
 
 @end

@@ -12,25 +12,22 @@
 
 @implementation Currency
 
-+ (instancetype)currencyWithCode:(NSString *)code
++ (instancetype)currencyWithCode:(NSString *)code exchangeRate:(NSNumber *)exchangeRate
 {
-  return [[self alloc] initWithCode:code];
+  return [[self alloc] initWithCode:code exchangeRate:exchangeRate];
 }
 
-- (instancetype)initWithCode:(NSString *)code
+- (instancetype)initWithCode:(NSString *)code exchangeRate:(NSNumber *)exchangeRate
 {
   if (!(self = [super init])) {
     return nil;
   }
 
   _code = code;
+  _exchangeRateFromBaseCurrency = exchangeRate;
+  _identifier = [NSUUID new];
 
   return self;
-}
-
-- (double)exchangeRateFromBaseCurrency
-{
-  return 0.5;
 }
 
 @end

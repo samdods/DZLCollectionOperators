@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 The App Business. All rights reserved.
 //
 
+#define DZLKeyPath()
+
 #define DZLAverage(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, avg)
 #define DZLCount(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, count)
 #define DZLMaximum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, max)
@@ -29,11 +31,11 @@
 #define DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^id(id dzl_obj){((typeOfObjectsInCollection)(dzl_obj)).keyPath; return collection;}(nil); } \
 [(collection) valueForKeyPath:@"@"#operator"."#keyPath]; })
 
-#define DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^(NSNumber *dzl_number, id dzl_obj){dzl_obj = collection; dzl_number = ((typeOfObjectsInCollection)(collection)).keyPath;}(nil, nil); } \
+#define DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^id(NSNumber *dzl_number){dzl_number = ((typeOfObjectsInCollection)(dzl_number)).keyPath; return collection;}(nil); } \
 DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, operator); })
 
-#define DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^(double dzl_double, id dzl_obj){dzl_obj = collection; dzl_double = ((typeOfObjectsInCollection)(collection)).keyPath;}(0, nil); } \
+#define DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^id(double dzl_double, id dzl_obj){dzl_double = ((typeOfObjectsInCollection)(dzl_obj)).keyPath; return collection;}(0, nil); } \
 DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, operator); })
 
-#define DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^(id dzl_obj){dzl_obj = collection; [((typeOfObjectsInCollection)(collection)).keyPath compare:dzl_obj];}(nil); } \
+#define DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, operator) ({ if (NO) { ^id(id dzl_obj){[((typeOfObjectsInCollection)(dzl_obj)).keyPath compare:dzl_obj]; return collection;}(nil); } \
 DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, operator); })
