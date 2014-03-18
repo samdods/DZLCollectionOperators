@@ -33,7 +33,7 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 
 # Full List of Macros
 
-##### Simple Collection Operators
+#### Simple Collection Operators
 * **DZLAverage** - equivalent to `@avg`
 * **DZLCount** - equivalent to `@count`
 * **DZLSum** - equivalent to `@sum`
@@ -54,3 +54,28 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 * **DZLDistinctUnionOfArrays** - equivalent to `@distinctUnionOfArrays`
 * **DZLUnionOfArrays** - equivalent to `@unionOfArrays`
 * **DZLDistinctUnionOfSets** - equivalent to `@distinctUnionOfSets`
+
+# Added Convenience
+
+You can get the average of a collection of numbers using the macros above as follows:
+
+```
+NSNumber *average = DZLAverage(numbers, NSNumber *, self);
+```
+
+I've added the convenience methods for this and for sum, which can be used as follows:
+
+```
+NSNumber *average = DZLAverageOfNumbers(numbers);
+NSNumber *sum = DZLSumOfNumbers(numbers);
+```
+
+# Installing
+
+Use CocoaPods, or simply add DZLCollectionOperators.h file to your project.
+
+It's as simple as that, it's just a header file with macros!
+
+If you like this, you can [follow me on twitter][twitter] for more of the same!
+
+[twitter]: http://twitter.com/dodsios
