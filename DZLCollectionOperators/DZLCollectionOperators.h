@@ -12,6 +12,9 @@
 #define DZLMinimum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, min)
 #define DZLSum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, sum)
 
+#define DZLAverageOfNumbers(collection) DZLAverageNumber(collection, NSNumber *, self)
+#define DZLSumOfNumbers(collection) DZLSumNumber(collection, NSNumber *, self)
+
 #define DZLAverageNumber(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, avg)
 #define DZLSumNumber(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, sum)
 

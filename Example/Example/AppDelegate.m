@@ -49,6 +49,11 @@
 
 - (void)demoSimpleCollectionOperators
 {
+  NSArray *numbers = @[@1, @2, @3, @4];
+  
+  NSLog(@"@avg (numbers) -> %@", DZLAverageOfNumbers(numbers));
+  NSLog(@"@sum (numbers) -> %@", DZLSumOfNumbers(numbers));
+  
   NSLog(@"@avg -> %@", DZLAverageDouble(self.transactions, Transaction *, amount));
   NSLog(@"@count -> %@", DZLCount(self.transactions, Transaction *, amount));
   NSLog(@"@max -> %@", DZLMaximum(self.transactions, Transaction *, date));
