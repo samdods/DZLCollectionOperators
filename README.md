@@ -34,23 +34,23 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 # Full List of Macros
 
 #### Simple Collection Operators
-* DZLAverage - equivalent to `@avg`
-* DZLCount - equivalent to `@count`
-* DZLSum - equivalent to `@sum`
-* DZLMinimum - equivalent to `@min` with added compile-time validation that objects in the collection respond to `-compare`
-* DZLMaximum - equivalent to `@max` with added compile-time validation that objects in the collection respond to `-compare`
+* **DZLAverage** - equivalent to `@avg`
+* **DZLCount** - equivalent to `@count`
+* **DZLSum** - equivalent to `@sum`
+* **DZLMinimum** - equivalent to `@min` with added compile-time validation that objects in the collection respond to `-compare`
+* **DZLMaximum** - equivalent to `@max` with added compile-time validation that objects in the collection respond to `-compare`
 
 #### Simple Collection Operators - Extra Validation
-* DZLAverageNumber - same as DZLAverage but checks that the key path leads to an instance of `NSNumber *`
-* DZLSumNumber - same as DZLSum but checks that the key path leads to an instance of `NSNumber *`
-* DZLAverageDouble - same as DZLAverage but checks that the key path leads to a `double` or compatible scalar type
-* DZLSumDouble - same as DZLSum but checks that the key path leads to a `double` or compatible scalar type
+* **DZLAverageNumber** - same as DZLAverage but checks that the key path leads to an instance of `NSNumber *`
+* **DZLSumNumber** - same as DZLSum but checks that the key path leads to an instance of `NSNumber *`
+* **DZLAverageDouble** - same as DZLAverage but checks that the key path leads to a `double` or compatible scalar type
+* **DZLSumDouble** - same as DZLSum but checks that the key path leads to a `double` or compatible scalar type
 
 #### Object Operators
-* DZLDistinctUnionOfObjects - equivalent to `@distinctUnionOfObjects`
-* DZLUnionOfObjects - equivalent to `@unionOfObjects`
+* **DZLDistinctUnionOfObjects** - equivalent to `@distinctUnionOfObjects`
+* **DZLUnionOfObjects** - equivalent to `@unionOfObjects`
 
 #### Array and Set Operators
-* DZLDistinctUnionOfArrays - equivalent to `@distinctUnionOfArrays`
-* DZLUnionOfArrays - equivalent to `@unionOfArrays`
-* DZLDistinctUnionOfSets - equivalent to `@distinctUnionOfSets`
+* **DZLDistinctUnionOfArrays** - equivalent to `@distinctUnionOfArrays`
+* **DZLUnionOfArrays** - equivalent to `@unionOfArrays`
+* **DZLDistinctUnionOfSets** - equivalent to `@distinctUnionOfSets`
