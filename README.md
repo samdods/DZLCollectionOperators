@@ -46,6 +46,10 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 * **DZLAverageDouble** - same as DZLAverage but checks that the key path leads to a `double` or compatible scalar type
 * **DZLSumDouble** - same as DZLSum but checks that the key path leads to a `double` or compatible scalar type
 
+#### Added Convenience (see below)
+* **DZLAverageOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the average
+* **DZLSumOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the sum
+
 #### Object Operators
 * **DZLDistinctUnionOfObjects** - equivalent to `@distinctUnionOfObjects`
 * **DZLUnionOfObjects** - equivalent to `@unionOfObjects`
