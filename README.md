@@ -23,6 +23,8 @@ MacroName(collection, typeOfObjectsInCollection, keyPath)
 * **typeOfObjectsInCollection** - the type of objects in the collection, e.g. `Transaction *` - I chose to require the full type including asterisk in order to be explicit
 * **keyPath** - dot-separated selector names, e.g. `payee.name`
 
+... with the exception of the "Added Convenience" macros for collections of `NSNumber *`s, see below.
+
 # Example
 
 I can create an array of all the names of payees for transactions, as follows:
@@ -46,6 +48,10 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 * **DZLAverageDouble** - same as DZLAverage but checks that the key path leads to a `double` or compatible scalar type
 * **DZLSumDouble** - same as DZLSum but checks that the key path leads to a `double` or compatible scalar type
 
+#### Added Convenience (see below)
+* **DZLAverageOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the average
+* **DZLSumOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the sum
+
 #### Object Operators
 * **DZLDistinctUnionOfObjects** - equivalent to `@distinctUnionOfObjects`
 * **DZLUnionOfObjects** - equivalent to `@unionOfObjects`
@@ -54,3 +60,28 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 * **DZLDistinctUnionOfArrays** - equivalent to `@distinctUnionOfArrays`
 * **DZLUnionOfArrays** - equivalent to `@unionOfArrays`
 * **DZLDistinctUnionOfSets** - equivalent to `@distinctUnionOfSets`
+
+# Added Convenience
+
+You can get the average of a collection of numbers using the macros above as follows:
+
+```
+NSNumber *average = DZLAverage(numbers, NSNumber *, self);
+```
+
+I've added the convenience methods for this and for sum, which can be used as follows:
+
+```
+NSNumber *average = DZLAverageOfNumbers(numbers);
+NSNumber *sum = DZLSumOfNumbers(numbers);
+```
+
+# Installing
+
+Use CocoaPods, or simply add DZLCollectionOperators.h file to your project.
+
+It's as simple as that, it's just a header file with macros!
+
+If you like this, you can [follow me on twitter][twitter] for more of the same!
+
+[twitter]: http://twitter.com/dodsios
