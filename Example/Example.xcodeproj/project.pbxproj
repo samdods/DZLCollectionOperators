@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EA7D989718D8441D00C29C6B /* DZLCollectionOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DZLCollectionOperators.h; path = DZLCollectionOperators/DZLCollectionOperators.h; sourceTree = "<group>"; };
+		EA7D989818D8455200C29C6B /* DZLCollectionOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZLCollectionOperators.h; sourceTree = "<group>"; };
 		EABA012C18D47C39005A557E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EABA012F18D47C39005A557E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EABA013118D47C39005A557E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,9 +57,10 @@
 		EA1B2DB218D843EA0055C93F /* DZLCollectionOperators */ = {
 			isa = PBXGroup;
 			children = (
-				EA7D989718D8441D00C29C6B /* DZLCollectionOperators.h */,
+				EA7D989818D8455200C29C6B /* DZLCollectionOperators.h */,
 			);
 			name = DZLCollectionOperators;
+			path = ../DZLCollectionOperators;
 			sourceTree = "<group>";
 		};
 		EABA012318D47C39005A557E = {
@@ -298,6 +299,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Example;
 				WRAPPER_EXTENSION = app;
 			};
@@ -311,6 +313,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Example;
 				WRAPPER_EXTENSION = app;
 			};
