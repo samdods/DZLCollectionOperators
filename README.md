@@ -33,7 +33,7 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 
 # Full List of Macros
 
-#### Simple Collection Operators
+### Simple Collection Operators
 * **DZLAverage** - equivalent to `@avg`
 * **DZLCount** - equivalent to `@count`
 * **DZLSum** - equivalent to `@sum`
