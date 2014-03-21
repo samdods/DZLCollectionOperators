@@ -51,17 +51,17 @@
 {
   NSArray *numbers = @[@1, @2, @3, @4];
   
-  NSLog(@"@avg (numbers) -> %@", DZLAverageOfNumbers(numbers));
-  NSLog(@"@sum (numbers) -> %@", DZLSumOfNumbers(numbers));
+  NSLog(@"@avg (numbers) -> %f", DZLAverageOfNumbers(numbers));
+  NSLog(@"@sum (numbers) -> %f", DZLSumOfNumbers(numbers));
   
-  NSLog(@"@avg -> %@", DZLAverageDouble(self.transactions, Transaction *, amount));
-  NSLog(@"@count -> %@", DZLCount(self.transactions, Transaction *, amount));
+  NSLog(@"@avg -> %f", DZLAverageDouble(self.transactions, Transaction *, amount));
+  NSLog(@"@count -> %f", DZLCount(self.transactions, Transaction *, amount));
   NSLog(@"@max -> %@", DZLMaximum(self.transactions, Transaction *, date));
   NSLog(@"@min -> %@", DZLMinimum(self.transactions, Transaction *, date));
-  NSLog(@"@sum -> %@", DZLSumDouble(self.transactions, Transaction *, amount));
+  NSLog(@"@sum -> %f", DZLSumDouble(self.transactions, Transaction *, amount));
   
-  NSLog(@"@avg (exchange rates) -> %@", DZLAverageNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
-  NSLog(@"@sum (exchange rates) -> %@", DZLSumNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
+  NSLog(@"@avg (exchange rates) -> %f", DZLAverageNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
+  NSLog(@"@sum (exchange rates) -> %f", DZLSumNumber(self.transactions, Transaction *, currency.exchangeRateFromBaseCurrency));
 }
 
 - (void)demoObjectOperators

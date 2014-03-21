@@ -8,20 +8,20 @@
 
 #define DZLKeyPath(type, keyPath) ({ if(NO){((type)nil).keyPath;} @#keyPath; })
 
-#define DZLAverage(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, avg)
-#define DZLCount(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, count)
+#define DZLAverage(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, avg)).doubleValue)
+#define DZLCount(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, count)).doubleValue)
 #define DZLMaximum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, max)
 #define DZLMinimum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionCompareOperation(collection, typeOfObjectsInCollection, keyPath, min)
-#define DZLSum(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, sum)
+#define DZLSum(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, sum)).doubleValue)
 
 #define DZLAverageOfNumbers(collection) DZLAverageNumber(collection, NSNumber *, self)
 #define DZLSumOfNumbers(collection) DZLSumNumber(collection, NSNumber *, self)
 
-#define DZLAverageNumber(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, avg)
-#define DZLSumNumber(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, sum)
+#define DZLAverageNumber(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, avg)).doubleValue)
+#define DZLSumNumber(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionNumberOperation(collection, typeOfObjectsInCollection, keyPath, sum)).doubleValue)
 
-#define DZLAverageDouble(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, avg)
-#define DZLSumDouble(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, sum)
+#define DZLAverageDouble(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, avg)).doubleValue)
+#define DZLSumDouble(collection, typeOfObjectsInCollection, keyPath) (((NSNumber *)DZLEvaluateCollectionDoubleOperation(collection, typeOfObjectsInCollection, keyPath, sum)).doubleValue)
 
 #define DZLDistinctUnionOfObjects(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, distinctUnionOfObjects)
 #define DZLUnionOfObjects(collection, typeOfObjectsInCollection, keyPath) DZLEvaluateCollectionOperation(collection, typeOfObjectsInCollection, keyPath, unionOfObjects)
