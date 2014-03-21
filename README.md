@@ -36,9 +36,9 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 # Full List of Macros
 
 #### Simple Collection Operators
-* **DZLAverage** - equivalent to `@avg`
-* **DZLCount** - equivalent to `@count`
-* **DZLSum** - equivalent to `@sum`
+* **DZLAverage** - equivalent to `@avg` (but returns double)
+* **DZLCount** - equivalent to `@count` (but returns double)
+* **DZLSum** - equivalent to `@sum` (but returns double)
 * **DZLMinimum** - equivalent to `@min` with added compile-time validation that objects in the collection respond to `-compare`
 * **DZLMaximum** - equivalent to `@max` with added compile-time validation that objects in the collection respond to `-compare`
 
@@ -49,8 +49,8 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 * **DZLSumDouble** - same as DZLSum but checks that the key path leads to a `double` or compatible scalar type
 
 #### Added Convenience (see below)
-* **DZLAverageOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the average
-* **DZLSumOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the sum
+* **DZLAverageOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the average as a double
+* **DZLSumOfNumbers** - only takes one parameter -- a collection of `NSNumber *` objects -- and returns the sum as a double
 
 #### Object Operators
 * **DZLDistinctUnionOfObjects** - equivalent to `@distinctUnionOfObjects`
@@ -66,14 +66,14 @@ NSArray *payeeNames = DZLUnionOfObjects(self.transactions, Transaction *, payee.
 You can get the average of a collection of numbers using the macros above as follows:
 
 ```
-NSNumber *average = DZLAverage(numbers, NSNumber *, self);
+double average = DZLAverage(numbers, NSNumber *, self);
 ```
 
 I've added the convenience methods for this and for sum, which can be used as follows:
 
 ```
-NSNumber *average = DZLAverageOfNumbers(numbers);
-NSNumber *sum = DZLSumOfNumbers(numbers);
+double average = DZLAverageOfNumbers(numbers);
+double sum = DZLSumOfNumbers(numbers);
 ```
 
 # Installing
